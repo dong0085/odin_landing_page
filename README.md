@@ -11,7 +11,7 @@ Provided the following theme:
 ![complete site](./Odin/02.png)
 
 Finished site:
-![complete site](finish.gif)
+![complete site](./final_screenshot.png)
 
 ## Purpose
 
