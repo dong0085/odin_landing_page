@@ -1,0 +1,372 @@
+/*
+
+CSS Reset
+Adapted from: https://piccalil.li/blog/a-more-modern-css-reset/
+
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  line-height: 1.5;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+ol,
+ul,
+dl,
+dd {
+  margin: 0 0 1.5rem;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: #36bf7f;
+}
+
+a:not([class]):hover,
+a:not([class]):focus-visible {
+  color: #d96666;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Update default button cursor to indicate interactivity */
+button {
+  cursor: pointer;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 3rem;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  font-family: "roboto", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+header > .wrapper {
+  background-color: #1f2937;
+}
+
+.container {
+  max-width: 65rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding-block-start: 1rem;
+  /* padding: 0 2rem; */
+  h1,
+  ul {
+    margin: 0;
+  }
+
+  .header__logo {
+    color: #f9faf8;
+  }
+}
+
+.link--list {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+
+  .nav__items > a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 18px;
+  }
+}
+
+.row--boxes {
+  list-style: none;
+  display: flex;
+}
+
+/* intro section */
+.wrapper--banner {
+  background-color: #1f2937;
+}
+.banner {
+  padding-block: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media only screen and (min-width: 30rem) {
+    flex-direction: unset;
+  }
+}
+
+.banner__content {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner__title {
+  color: #f9faf8;
+  font-size: 48px;
+  font-weight: 900;
+  margin-block-end: 0;
+}
+
+.banner__text {
+  color: #f9faf8;
+  font-size: 18px;
+  font-weight: 200;
+  margin-block-end: 0.5rem;
+}
+
+.banner__button {
+  background-color: #3882f6;
+  align-self: flex-start;
+  padding-inline: 1.5rem;
+  padding-block: 0.3rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #f9faf8;
+}
+
+.banner__img {
+  flex: 1 1;
+}
+
+/* information */
+.wrapper--info > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .info__title {
+    flex: 1 1;
+    margin: 0 auto;
+    padding-block-start: 3rem;
+  }
+
+  .info__list {
+    flex: 5 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+
+    .info__list--item {
+      flex: 1 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      p {
+        text-align: center;
+        max-width: 8rem;
+        font-size: 11px;
+        font-weight: 300;
+      }
+
+      img {
+        padding: 0.5rem;
+        border-width: 2px;
+        border-color: #3882f6;
+        border-radius: 0.5rem;
+        border-style: solid;
+      }
+    }
+  }
+}
+
+/* quote section */
+.wrapper--quote {
+  background-color: #e5e7eb;
+
+  .container {
+    padding-inline: 1.5rem;
+    margin: 0 auto;
+    padding-block: 4rem;
+    max-width: 47rem;
+  }
+}
+
+.quote {
+  font-size: 36px;
+  font-style: italic;
+  color: #1f2937;
+  font-weight: 100;
+  margin-block-end: 0;
+}
+
+.author {
+  text-align: end;
+}
+
+.wrapper--card {
+  max-width: 65rem;
+  margin: 0 auto;
+  padding-block: 5rem;
+
+  .container {
+    background-color: #3882f6;
+    color: #f9faf8;
+    border-radius: 0.5rem;
+    padding-inline: 1.5rem;
+    padding-block: 1.5rem;
+    max-width: 40rem;
+    max-height: 8rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.card__content {
+  flex: 5 1 30rem;
+  padding-inline-start: 4rem;
+  text-align: left;
+  align-self: center;
+}
+
+.card__title {
+  margin: 0 0 0;
+  font-size: medium;
+}
+
+.card__text {
+  font-size: small;
+  font-weight: 100;
+  margin: 0 0 0;
+}
+
+.card__button {
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  border-color: #f9faf8;
+  text-decoration: none;
+  color: #f9faf8;
+  background-color: #3882f6;
+  padding-inline: 1.6rem;
+  padding-block: 0.3rem;
+  font-size: small;
+  flex: 1 1 7rem;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* footer styles */
+
+.footer {
+  background-color: #1f2937;
+  color: #f9faf8;
+  text-align: center;
+  padding-block: 1.5rem;
+}
